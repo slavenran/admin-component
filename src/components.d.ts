@@ -10,6 +10,9 @@ export namespace Components {
     }
     interface TableComponent {
     }
+    interface TestTable {
+        "properties": any;
+    }
 }
 declare global {
     interface HTMLClinicsComponentElement extends Components.ClinicsComponent, HTMLStencilElement {
@@ -24,9 +27,16 @@ declare global {
         prototype: HTMLTableComponentElement;
         new (): HTMLTableComponentElement;
     };
+    interface HTMLTestTableElement extends Components.TestTable, HTMLStencilElement {
+    }
+    var HTMLTestTableElement: {
+        prototype: HTMLTestTableElement;
+        new (): HTMLTestTableElement;
+    };
     interface HTMLElementTagNameMap {
         "clinics-component": HTMLClinicsComponentElement;
         "table-component": HTMLTableComponentElement;
+        "test-table": HTMLTestTableElement;
     }
 }
 declare namespace LocalJSX {
@@ -34,9 +44,13 @@ declare namespace LocalJSX {
     }
     interface TableComponent {
     }
+    interface TestTable {
+        "properties"?: any;
+    }
     interface IntrinsicElements {
         "clinics-component": ClinicsComponent;
         "table-component": TableComponent;
+        "test-table": TestTable;
     }
 }
 export { LocalJSX as JSX };
@@ -45,6 +59,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "clinics-component": LocalJSX.ClinicsComponent & JSXBase.HTMLAttributes<HTMLClinicsComponentElement>;
             "table-component": LocalJSX.TableComponent & JSXBase.HTMLAttributes<HTMLTableComponentElement>;
+            "test-table": LocalJSX.TestTable & JSXBase.HTMLAttributes<HTMLTestTableElement>;
         }
     }
 }

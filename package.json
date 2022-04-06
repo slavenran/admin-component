@@ -28,7 +28,8 @@
   },
   "dependencies": {
     "@stencil/core": "^2.13.0",
-    "@stencil/sass": "^1.5.2"
+    "@stencil/sass": "^1.5.2",
+    "ag-grid-community": "^27.1.0"
   },
   "devDependencies": {
     "@types/jest": "^27.0.3",
