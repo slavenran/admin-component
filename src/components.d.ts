@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { GridBehavior, GridColumn } from "smart-webcomponents/source/typescript/smart.elements";
+import { GridColumn } from "smart-webcomponents/source/typescript/smart.elements";
 export namespace Components {
     interface ClinicsComponent {
     }
@@ -16,7 +16,6 @@ export namespace Components {
     }
     interface TestTableSmart {
         "appearance": any;
-        "behavior": GridBehavior;
         "columns": GridColumn[];
         "dataSource": any;
         "editing": any;
@@ -68,7 +67,6 @@ declare namespace LocalJSX {
     }
     interface TestTableSmart {
         "appearance"?: any;
-        "behavior"?: GridBehavior;
         "columns"?: GridColumn[];
         "dataSource"?: any;
         "editing"?: any;

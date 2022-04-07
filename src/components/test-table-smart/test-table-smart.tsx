@@ -1,5 +1,5 @@
 import { h, Component, Prop, Host } from "@stencil/core";
-import { GridColumn, GridBehavior } from 'smart-webcomponents/source/typescript/smart.elements';
+import { GridColumn } from 'smart-webcomponents/source/typescript/smart.elements';
 import 'smart-webcomponents/source/components/smart.ui.grid.js';
 
 const w = window as any;
@@ -11,7 +11,6 @@ const w = window as any;
 })
 export class TestTableSmart {
   @Prop({mutable: true}) columns: GridColumn[];
-  @Prop({mutable: true}) behavior: GridBehavior;
   @Prop({mutable: true}) dataSource;
   @Prop({mutable: true}) appearance;
   @Prop({mutable: true}) paging;
@@ -25,7 +24,7 @@ export class TestTableSmart {
       alternationCount: 2,
       showRowHeader: true,
       showRowHeaderSelectIcon: true,
-      showRowHeaderFocusIcon: true
+      showRowHeaderFocusIcon: false
     }
 
     this.sorting = {
@@ -56,14 +55,12 @@ export class TestTableSmart {
     
     this.paging = {
       enabled: true,
-      pageSize: 15
+      pageSize: 10
     }
 
     this.pager = {
       visible: true
     }
-
-    this.behavior = { columnResizeMode: 'growAndShrink' };
 
     this.dataSource = new w.Smart.DataAdapter({
       dataSource: 'https://raw.githubusercontent.com/HTMLElements/smart-webcomponents/master/sampledata/customers.json',
@@ -75,7 +72,7 @@ export class TestTableSmart {
   render() {
     return (
       <Host>
-        <smart-ui-grid appearance={this.appearance} sorting={this.sorting} selection={this.selection} editing={this.editing} behavior={this.behavior} dataSource={this.dataSource} columns={this.columns} paging={this.paging} pager={this.pager} id="grid"></smart-ui-grid>
+        <smart-ui-grid class="bruh" appearance={this.appearance} sorting={this.sorting} selection={this.selection} editing={this.editing} dataSource={this.dataSource} columns={this.columns} paging={this.paging} pager={this.pager} id="grid"></smart-ui-grid>
       </Host>
     );
   }

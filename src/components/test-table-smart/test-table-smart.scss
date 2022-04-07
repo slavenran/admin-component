@@ -11,3 +11,19 @@
   font-weight: 400;
   font-style: normal
 }
+
+.bruh {
+  background-color: red;
+}
+
+smart-ui-grid {
+  // --smart-background: red;
+  --smart-border: transparent;
+  --smart-primary: rgba(25, 103, 216, 0.05);
+  --smart-ui-state-hover: rgba(25, 103, 216, 0.05);
+  --smart-primary-color: #3E3F42;
+  --smart-ui-state-color-selected: #3E3F42;
+  --smart-background-color: #3E3F42;
+  --smart-alternation-index0-background: #fff;
+  --smart-surface: #fff;
+}
