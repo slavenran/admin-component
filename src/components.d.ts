@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { GridBehavior, GridColumn } from "smart-webcomponents/source/typescript/smart.elements";
 export namespace Components {
     interface ClinicsComponent {
     }
@@ -12,6 +13,17 @@ export namespace Components {
     }
     interface TestTable {
         "properties": any;
+    }
+    interface TestTableSmart {
+        "appearance": any;
+        "behavior": GridBehavior;
+        "columns": GridColumn[];
+        "dataSource": any;
+        "editing": any;
+        "pager": any;
+        "paging": any;
+        "selection": any;
+        "sorting": any;
     }
 }
 declare global {
@@ -33,10 +45,17 @@ declare global {
         prototype: HTMLTestTableElement;
         new (): HTMLTestTableElement;
     };
+    interface HTMLTestTableSmartElement extends Components.TestTableSmart, HTMLStencilElement {
+    }
+    var HTMLTestTableSmartElement: {
+        prototype: HTMLTestTableSmartElement;
+        new (): HTMLTestTableSmartElement;
+    };
     interface HTMLElementTagNameMap {
         "clinics-component": HTMLClinicsComponentElement;
         "table-component": HTMLTableComponentElement;
         "test-table": HTMLTestTableElement;
+        "test-table-smart": HTMLTestTableSmartElement;
     }
 }
 declare namespace LocalJSX {
@@ -47,10 +66,22 @@ declare namespace LocalJSX {
     interface TestTable {
         "properties"?: any;
     }
+    interface TestTableSmart {
+        "appearance"?: any;
+        "behavior"?: GridBehavior;
+        "columns"?: GridColumn[];
+        "dataSource"?: any;
+        "editing"?: any;
+        "pager"?: any;
+        "paging"?: any;
+        "selection"?: any;
+        "sorting"?: any;
+    }
     interface IntrinsicElements {
         "clinics-component": ClinicsComponent;
         "table-component": TableComponent;
         "test-table": TestTable;
+        "test-table-smart": TestTableSmart;
     }
 }
 export { LocalJSX as JSX };
@@ -60,6 +91,7 @@ declare module "@stencil/core" {
             "clinics-component": LocalJSX.ClinicsComponent & JSXBase.HTMLAttributes<HTMLClinicsComponentElement>;
             "table-component": LocalJSX.TableComponent & JSXBase.HTMLAttributes<HTMLTableComponentElement>;
             "test-table": LocalJSX.TestTable & JSXBase.HTMLAttributes<HTMLTestTableElement>;
+            "test-table-smart": LocalJSX.TestTableSmart & JSXBase.HTMLAttributes<HTMLTestTableSmartElement>;
         }
     }
 }
