@@ -21,7 +21,10 @@ export class TestTableSmart {
 
   componentDidLoad() {
     this.appearance = {
-      showTooltips: true
+      showTooltips: true,
+      showColumnLines: false,
+      showColumnHeaderLines: false,
+      showColumnActionButton: false
     }
 
     this.sorting = {

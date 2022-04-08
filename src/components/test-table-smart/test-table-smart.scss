@@ -13,16 +13,18 @@
 }
 
 smart-ui-grid {
-  --smart-border: transparent;
-  --smart-outline: transparent;
-  --smart-primary: rgba(25, 103, 216, 0.05);
-  --smart-ui-state-hover: rgba(25, 103, 216, 0.05);
-  --smart-ui-state-active: #1967D8;
-  --smart-ui-state-color-active: #fff;
-  --smart-primary-color: #3E3F42;
-  --smart-ui-state-color-selected: #3E3F42;
-  --smart-background-color: #3E3F42;
-  --smart-alternation-index0-background: #fff;
+  // --smart-border: transparent;
+  // --smart-outline: transparent;
+  // --smart-primary: rgba(25, 103, 216, 0.05);
+  // --smart-ui-state-hover: rgba(25, 103, 216, 0.05);
+  // --smart-ui-state-active: #1967D8;
+  // --smart-ui-state-color-active: #fff;
+  // --smart-primary-color: #3E3F42;
+  // --smart-ui-state-color-selected: #3E3F42;
+  // --smart-background-color: #3E3F42;
+  // --smart-alternation-index0-background: #fff;
+  --smart-grid-freeze-splitter-size: 0;
+  --smart-scroll-bar-size: 0;
   --smart-surface: #fff;
   --smart-grid-default-width: 100%;
   --smart-grid-row-height: 50px;
