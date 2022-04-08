@@ -21,10 +21,7 @@ export class TestTableSmart {
 
   componentDidLoad() {
     this.appearance = {
-      alternationCount: 2,
-      showRowHeader: true,
-      showRowHeaderSelectIcon: true,
-      showRowHeaderFocusIcon: false
+      showTooltips: true
     }
 
     this.sorting = {
@@ -37,9 +34,10 @@ export class TestTableSmart {
 
     this.selection = {
       enabled: true,
-      allowCellSelection: false,
+      checkBoxes: {
+        enabled: true
+      },
       allowRowHeaderSelection: true,
-      allowColumnHeaderSelection: false,
       mode: 'many'
     }
 
@@ -72,7 +70,7 @@ export class TestTableSmart {
   render() {
     return (
       <Host>
-        <smart-ui-grid class="bruh" appearance={this.appearance} sorting={this.sorting} selection={this.selection} editing={this.editing} dataSource={this.dataSource} columns={this.columns} paging={this.paging} pager={this.pager} id="grid"></smart-ui-grid>
+        <smart-ui-grid appearance={this.appearance} sorting={this.sorting} selection={this.selection} editing={this.editing} dataSource={this.dataSource} columns={this.columns} paging={this.paging} pager={this.pager} id="grid"></smart-ui-grid>
       </Host>
     );
   }
