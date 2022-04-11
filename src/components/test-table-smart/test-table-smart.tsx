@@ -18,6 +18,7 @@ export class TestTableSmart {
   @Prop({mutable: true}) sorting;
   @Prop({mutable: true}) editing;
   @Prop({mutable: true}) selection;
+  @Prop({mutable: true}) conditionalFormatting;
 
   componentDidLoad() {
     this.appearance = {
@@ -41,6 +42,7 @@ export class TestTableSmart {
         enabled: true
       },
       allowRowHeaderSelection: true,
+      allowRowSelection: false,
       mode: 'many'
     }
 
@@ -68,12 +70,21 @@ export class TestTableSmart {
       id: 'CustomerID',
       dataFields: ['CustomerID: string', 'CompanyName: string', 'ContactName: string', 'ContactTitle: string', 'Address: string', 'City: string', 'Country: string'],
     });
+
+    this.conditionalFormatting = [
+      {
+        column: "Country",
+        condition: "equal",
+        firstValue: "Mexico",
+        text: "red"
+      }
+    ]
   }
 
   render() {
     return (
       <Host>
-        <smart-ui-grid appearance={this.appearance} sorting={this.sorting} selection={this.selection} editing={this.editing} dataSource={this.dataSource} columns={this.columns} paging={this.paging} pager={this.pager} id="grid"></smart-ui-grid>
+        <smart-ui-grid conditionalFormatting={this.conditionalFormatting} appearance={this.appearance} sorting={this.sorting} selection={this.selection} editing={this.editing} dataSource={this.dataSource} columns={this.columns} paging={this.paging} pager={this.pager} id="grid"></smart-ui-grid>
       </Host>
     );
   }

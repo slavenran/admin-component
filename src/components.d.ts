@@ -17,6 +17,7 @@ export namespace Components {
     interface TestTableSmart {
         "appearance": any;
         "columns": GridColumn[];
+        "conditionalFormatting": any;
         "dataSource": any;
         "editing": any;
         "pager": any;
@@ -68,6 +69,7 @@ declare namespace LocalJSX {
     interface TestTableSmart {
         "appearance"?: any;
         "columns"?: GridColumn[];
+        "conditionalFormatting"?: any;
         "dataSource"?: any;
         "editing"?: any;
         "pager"?: any;
