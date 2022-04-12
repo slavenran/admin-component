@@ -10,7 +10,13 @@ table {
       box-sizing: border-box;
       border-top: $table-border;
       padding: 20px;
+      color: #3E3F42;
       text-align: left;
+      font-family: museo-sans, sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16.8px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -23,6 +29,14 @@ table {
       &:last-child {
         border-right: $table-border;
       }
+    }
+
+    th {
+      color: #8A9AA7;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 14.4px;
     }
 
     &:first-child {
@@ -48,6 +62,14 @@ table {
         &:last-child {
           border-bottom-right-radius: 5px;
         }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      &:hover {
+        background-color: #1967D80D;
       }
     }
   }

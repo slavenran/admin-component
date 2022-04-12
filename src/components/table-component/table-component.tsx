@@ -26,7 +26,7 @@ export class TableComponent {
               <th>+</th>
               {
                 this.columns.map((column) => {
-                  return <th>{column.label}</th>
+                  return <th key={column.label}>{column.label}</th>
                 })
               }
             </tr>
@@ -34,12 +34,12 @@ export class TableComponent {
           <tbody>
             {
               this.dataSet.map((data) => {
-                return <tr>
+                return <tr key={data['CustomerId']}>
                   {/* TODO add checkbox */}
                   <td>+</td>
                   {
                     this.columns.map((column) => {
-                      return <td>{data[column.dataField]}</td>
+                      return <td key={column.label} title={data[column.dataField]}>{data[column.dataField]}</td>
                     })
                   }
                 </tr>
