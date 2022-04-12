@@ -1,4 +1,54 @@
-div {
-  background-color: var(--primary-color);
-  color: var(--text-color);
+$table-border: 1px solid #EAEDF3;
+
+table {
+  border-radius: 5px;
+  border-collapse: separate;
+  border-spacing: 0;
+
+  tr {
+    td, th {
+      box-sizing: border-box;
+      border-top: $table-border;
+      padding: 20px;
+      text-align: left;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 200px;
+
+      &:first-child {
+        border-left: $table-border;
+      }
+
+      &:last-child {
+        border-right: $table-border;
+      }
+    }
+
+    &:first-child {
+      th {
+        &:first-child {
+          border-top-left-radius: 5px;
+        }
+
+        &:last-child {
+          border-top-right-radius: 5px;
+        }
+      }
+    }
+
+    &:last-child {
+      td {
+        border-bottom: $table-border;
+
+        &:first-child {
+          border-bottom-left-radius: 5px;
+        }
+
+        &:last-child {
+          border-bottom-right-radius: 5px;
+        }
+      }
+    }
+  }
 }

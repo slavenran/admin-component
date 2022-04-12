@@ -5,11 +5,15 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Column } from "./components/table-component/table-component";
 import { GridColumn } from "smart-webcomponents/source/typescript/smart.elements";
 export namespace Components {
     interface ClinicsComponent {
     }
     interface TableComponent {
+        "columns": Array<Column>;
+        "dataApi"?: String;
+        "dataSet": Array<Object>;
     }
     interface TestTable {
         "properties": any;
@@ -62,6 +66,9 @@ declare namespace LocalJSX {
     interface ClinicsComponent {
     }
     interface TableComponent {
+        "columns"?: Array<Column>;
+        "dataApi"?: String;
+        "dataSet"?: Array<Object>;
     }
     interface TestTable {
         "properties"?: any;
