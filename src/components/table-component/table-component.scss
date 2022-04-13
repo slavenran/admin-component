@@ -1,4 +1,4 @@
-$table-border: 1px solid #EAEDF3;
+$table-border: 1px solid #eaedf3;
 
 table {
   border-radius: 5px;
@@ -7,11 +7,12 @@ table {
   margin: auto;
 
   tr {
-    td, th {
+    td,
+    th {
       box-sizing: border-box;
       border-top: $table-border;
-      padding: 20px;
-      color: #3E3F42;
+      padding: 20px 30px;
+      color: #3e3f42;
       text-align: left;
       font-family: museo-sans, sans-serif;
       font-weight: 400;
@@ -29,10 +30,61 @@ table {
       &:last-child {
         border-right: $table-border;
       }
+
+      .checkbox {
+        display: block;
+        position: relative;
+        width: 14px;
+        height: 14px;
+
+        input[type="checkbox"] {
+          position: absolute;
+          cursor: pointer;
+          width: 0px;
+          height: 0px;
+
+          &::before {
+            content: "";
+            box-sizing: border-box;
+            display: block;
+            position: absolute;
+            top: -3px;
+            left: -4px;
+            width: 14px;
+            height: 14px;
+            border: 2px solid #8A9AA7;
+            border-radius: 3px;
+          }
+
+          &:checked::before {
+            border: none;
+            background-color: #1967D8;
+          }
+
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -1.5px;
+            left: 1px;
+            width: 3px;
+            height: 7px;
+            border: solid white;
+            border-width: 0 1.5px 1.5px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+          }
+
+          &:checked::after {
+            border-width: 0 1.5px 1.5px 0;
+          }
+        }
+      }
     }
 
     th {
-      color: #8A9AA7;
+      color: #8a9aa7;
       text-transform: uppercase;
       font-weight: 600;
       font-size: 12px;
@@ -81,7 +133,7 @@ table {
   tbody {
     tr {
       &:hover {
-        background-color: #1967D80D;
+        background-color: #1967d80d;
       }
     }
   }
@@ -107,14 +159,14 @@ table {
     width: 30px;
     height: 30px;
     border-radius: 4px;
-    color: #3E3F42;
+    color: #3e3f42;
     font-family: museo-sans, sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 16.8px;
 
     &:hover {
-      background-color: #EAEDF3;
+      background-color: #eaedf3;
       cursor: pointer;
     }
   }

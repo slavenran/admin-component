@@ -1,4 +1,4 @@
-import { h, Component, Host, Prop } from "@stencil/core";
+import { h, Component, Host, Prop, State } from "@stencil/core";
 import LeftArrow from "../../assets/images/left-arrow.svg";
 import RightArrow from "../../assets/images/right-arrow.svg";
 import NoSort from "../../assets/images/no-sort.svg";
@@ -25,8 +25,7 @@ export class TableComponent {
         <table>
           <thead>
             <tr>
-              {/* TODO add checkbox */}
-              <th>+</th>
+              <th><div class="checkbox"><input type="checkbox" /></div></th>
               {
                 this.columns.map((column) => {
                   return <th key={column.label}><div>{column.label} <img src={NoSort} alt='leftArrow' /></div></th>
@@ -38,8 +37,7 @@ export class TableComponent {
             {
               this.dataSet.map((data) => {
                 return <tr key={data['CustomerId']}>
-                  {/* TODO add checkbox */}
-                  <td>+</td>
+                  <td><div class="checkbox"><input type="checkbox" /></div></td>
                   {
                     this.columns.map((column) => {
                       return <td key={column.label} title={data[column.dataField]}>{data[column.dataField]}</td>
