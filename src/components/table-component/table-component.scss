@@ -37,6 +37,18 @@ table {
       font-weight: 600;
       font-size: 12px;
       line-height: 14.4px;
+
+      div {
+        display: flex;
+
+        img {
+          margin-left: 8px;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
     }
 
     &:first-child {

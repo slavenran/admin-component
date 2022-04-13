@@ -1,6 +1,7 @@
 import { h, Component, Host, Prop } from "@stencil/core";
 import LeftArrow from "../../assets/images/left-arrow.svg";
 import RightArrow from "../../assets/images/right-arrow.svg";
+import NoSort from "../../assets/images/no-sort.svg";
 
 export interface Column {
   label: string;
@@ -28,7 +29,7 @@ export class TableComponent {
               <th>+</th>
               {
                 this.columns.map((column) => {
-                  return <th key={column.label}>{column.label}</th>
+                  return <th key={column.label}><div>{column.label} <img src={NoSort} alt='leftArrow' /></div></th>
                 })
               }
             </tr>
@@ -58,7 +59,7 @@ export class TableComponent {
           <div class="pagination-button">4</div>
           <div class="pagination-button">5</div>
           <div class="divider" />
-          <div class="pagination-button"><img src={RightArrow} alt='leftArrow' /></div>
+          <div class="pagination-button"><img src={RightArrow} alt='rightArrow' /></div>
         </div>
       </Host>
     )
