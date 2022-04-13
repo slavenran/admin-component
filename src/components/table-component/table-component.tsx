@@ -1,4 +1,6 @@
 import { h, Component, Host, Prop } from "@stencil/core";
+import LeftArrow from "../../assets/images/left-arrow.svg";
+import RightArrow from "../../assets/images/right-arrow.svg";
 
 export interface Column {
   label: string;
@@ -47,6 +49,17 @@ export class TableComponent {
             }
           </tbody>
         </table>
+        <div class="pagination">
+          <div class="pagination-button"><img src={LeftArrow} alt='leftArrow' /></div>
+          <div class="divider" />
+          <div class="pagination-button">1</div>
+          <div class="pagination-button">2</div>
+          <div class="pagination-button">3</div>
+          <div class="pagination-button">4</div>
+          <div class="pagination-button">5</div>
+          <div class="divider" />
+          <div class="pagination-button"><img src={RightArrow} alt='leftArrow' /></div>
+        </div>
       </Host>
     )
   }

@@ -4,6 +4,7 @@ table {
   border-radius: 5px;
   border-collapse: separate;
   border-spacing: 0;
+  margin: auto;
 
   tr {
     td, th {
@@ -13,7 +14,6 @@ table {
       color: #3E3F42;
       text-align: left;
       font-family: museo-sans, sans-serif;
-      font-style: normal;
       font-weight: 400;
       font-size: 14px;
       line-height: 16.8px;
@@ -72,5 +72,42 @@ table {
         background-color: #1967D80D;
       }
     }
+  }
+}
+
+.pagination {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 281px;
+  height: 41px;
+  border: $table-border;
+  border-radius: 4px;
+  padding: 4px;
+  margin: auto;
+  margin-top: 32px;
+
+  .pagination-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    color: #3E3F42;
+    font-family: museo-sans, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.8px;
+
+    &:hover {
+      background-color: #EAEDF3;
+      cursor: pointer;
+    }
+  }
+
+  .divider {
+    border-right: $table-border;
   }
 }
